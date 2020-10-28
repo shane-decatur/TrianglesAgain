@@ -12,4 +12,8 @@ public class Triangle{
     v2 = new Point(x2,y2);
     v3 = new Point(x3,y3);
   }
+
+  public double getPerimeter(){
+    return v1.distanceTo(v2) + v1.distanceTo(v3) + v2.distanceTo(v3);
+  }
 }
