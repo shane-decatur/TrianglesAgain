@@ -25,4 +25,22 @@ public class Triangle{
     double squared = s*(s-a)*(s-b)*(s-c);
     return Math.sqrt(squared);
   }
+
+  public String classify(){
+    int equalSides = 1;
+    double a = Math.round((v1.distanceTo(v2) * 10000)) / 10000.0;
+    double b = Math.round((v1.distanceTo(v3) * 10000)) / 10000.0;
+    double c = Math.round((v2.distanceTo(v3) * 10000)) / 10000.0;
+    if (a == b) equalSides++;
+    if (a == c) equalSides++;
+    if (equalSides == 3) {
+      return "equilateral";
+    }
+    if (equalSides == 2) {
+      return "isosceles";
+    }
+    else {
+      return "scalene";
+    }
+  }
 }
