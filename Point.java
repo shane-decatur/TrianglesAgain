@@ -23,4 +23,8 @@ public class Point{
     double squares = (other.x-x)*(other.x-x)+(other.y-y)*(other.y-y);
     return Math.sqrt(squares);
   }
+
+  public boolean equals(Point other){
+    return other.x == x && other.y == y;
+  }
 }
