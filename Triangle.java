@@ -43,4 +43,11 @@ public class Triangle{
       return "scalene";
     }
   }
+
+  public String toString(){
+    String first = "v1("+v1.getX()+", "+v1.getY()+") ";
+    String second = "v2("+v2.getX()+", "+v2.getY()+") ";
+    String third = "v3("+v3.getX()+", "+v3.getY()+")";
+    return first + second + third;
+  }
 }
