@@ -28,16 +28,20 @@ public class Triangle{
 
   public String classify(){
     int equalSides = 1;
-    double a = Math.round((v1.distanceTo(v2) * 10000)) / 10000.0;
-    double b = Math.round((v1.distanceTo(v3) * 10000)) / 10000.0;
-    double c = Math.round((v2.distanceTo(v3) * 10000)) / 10000.0;
-    if (a == b) equalSides++;
-    if (a == c) equalSides++;
-    if (equalSides == 3) {
-      return "equilateral";
+    double a = Math.round(v1.distanceTo(v2) * 10000) / 10000.0;
+    double b = Math.round(v1.distanceTo(v3) * 10000) / 10000.0;
+    double c = Math.round(v2.distanceTo(v3) * 10000) / 10000.0;
+    if (a == b || a == c) {
+      equalSides++;
+    }
+    if (b == c) {
+      equalSides++;
     }
     if (equalSides == 2) {
       return "isosceles";
+    }
+    if (equalSides == 3) {
+      return "equilateral";
     }
     else {
       return "scalene";
@@ -49,5 +53,11 @@ public class Triangle{
     String second = "v2("+v2.getX()+", "+v2.getY()+") ";
     String third = "v3("+v3.getX()+", "+v3.getY()+")";
     return first + second + third;
+  }
+
+  public void setVertex(int index, Point newP){
+    if (index == 0) v1 = newP;
+    if (index == 1) v2 = newP;
+    if (index == 2) v3 = newP;
   }
 }
